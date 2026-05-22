@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Web Server | Nazwar Rezky Median</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+overflow:hidden;
+height:100vh;
+background:linear-gradient(-45deg,#000428,#004e92,#4b0082,#00c6ff);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.slider{
+display:flex;
+transition:1s;
+height:100vh;
+}
+
+.slide{
+min-width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+}
+
+.card{
+width:85%;
+max-width:1000px;
+
+padding:40px;
+border-radius:25px;
+
+background:rgba(255,255,255,0.1);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.3);
+
+box-shadow:
+0 0 20px rgba(0,255,255,.4),
+0 0 40px rgba(0,255,255,.2);
+
+color:white;
+
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+p,li{
+font-size:20px;
+line-height:1.8;
+}
+
+.center{
+text-align:center;
+}
+
+.glow{
+text-shadow:
+0 0 10px cyan,
+0 0 20px cyan,
+0 0 30px cyan;
+}
+
+.highlight{
+color:#00ffff;
+font-weight:bold;
+}
+
+ul{
+margin-left:25px;
+}
+
+button{
+
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+padding:15px 20px;
+font-size:25px;
+border:none;
+border-radius:50%;
+cursor:pointer;
+background:rgba(255,255,255,.2);
+color:white;
+backdrop-filter:blur(10px);
+}
+
+button:hover{
+background:white;
+color:black;
+}
+
+.prev{
+left:20px;
+}
+
+.next{
+right:20px;
+}
+
+.dot-container{
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:10px;
+}
+
+.dot{
+width:12px;
+height:12px;
+background:white;
+border-radius:50%;
+opacity:.5;
+}
+
+.active{
+opacity:1;
+background:cyan;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="slider" id="slider">
+
+<!-- Slide 1 -->
+
+<div class="slide">
+
+<div class="card center">
+
+<h1 class="glow">
+HALLOO!! 👋
+</h1>
+
+<h2>
+Selamat Datang di Web Server
+</h2>
+
+<h1 class="highlight">
+Nazwar Rezky Median
+</h1>
+
+<p>
+Website Portofolio TKJ
+</p>
+
+</div>
+
+</div>
+
+<!-- Slide 2 -->
+
+<div class="slide">
+
+<div class="card">
+
+<h1>👨 About Me</h1>
+
+<p>
+Saya <span class="highlight">Nazwar Rezky Median</span>, usia saya sekarang <span class="highlight">18 tahun</span>.
+Saya siswa <span class="highlight">SMKS Sandikta</span> yang berjurusan
+<span class="highlight">TKJ (Teknik Komputer Jaringan)</span>.
+</p>
+
+<br>
+
+<p>
+Saya ingin menginformasikan pengalaman keahlian dasar saya:
+</p>
+
+<ul>
+
+<li>🌐 DNS Server</li>
+
+<li>🖥 Web Server</li>
+
+<li>🔒 SSH Server</li>
+
+<li>📡 Mikrotik</li>
+
+<li>⚙ Cisco</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- Slide 3 -->
+
+<div class="slide">
+
+<div class="card">
+
+<h1>📚 Penjelasan</h1>
+
+<p>
+<b>🌐 DNS Server</b><br>
+DNS Server adalah sistem yang mengubah nama domain menjadi alamat IP.<br>
+Gunanya: mempermudah pengguna mengakses website tanpa menghafal IP.
+</p>
+
+<br>
+
+<p>
+<b>🖥 Web Server</b><br>
+Web Server adalah sistem yang menyimpan dan menampilkan website kepada pengguna.<br>
+Gunanya: menjalankan website agar dapat diakses melalui internet.
+</p>
+
+<br>
+
+<p>
+<b>🔒 SSH Server</b><br>
+SSH Server adalah layanan untuk mengakses server secara aman dari jarak jauh.<br>
+Gunanya: mempermudah konfigurasi dan pengelolaan server.
+</p>
+
+<br>
+
+<p>
+<b>📡 Mikrotik</b><br>
+Digunakan untuk mengatur jaringan, hotspot, firewall, dan bandwidth.
+</p>
+
+<br>
+
+<p>
+<b>⚙ Cisco</b><br>
+Digunakan untuk membangun dan mengelola jaringan komputer.
+</p>
+
+</div>
+
+</div>
+
+<!-- Slide 4 -->
+
+<div class="slide">
+
+<div class="card center">
+
+<h1 class="glow">
+TERIMAKASIHHH!!! 🎉
+</h1>
+
+<h2>
+Terima kasih telah mengunjungi Web Server saya
+</h2>
+
+<p>
+See You Again 👋
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="prev" onclick="prevSlide()">❮</button>
+<button class="next" onclick="nextSlide()">❯</button>
+
+<div class="dot-container">
+<div class="dot active"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+</div>
+
+<script>
+
+let slide=0;
+const slider=document.getElementById("slider");
+const dots=document.querySelectorAll(".dot");
+
+function showSlide(){
+
+slider.style.transform=
+`translateX(-${slide*100}%)`;
+
+dots.forEach(dot=>dot.classList.remove("active"));
+
+dots[slide].classList.add("active");
+
+}
+
+function nextSlide(){
+
+slide=(slide+1)%4;
+
+showSlide();
+
+}
+
+function prevSlide(){
+
+slide=(slide-1+4)%4;
+
+showSlide();
+
+}
+
+setInterval(nextSlide,5000);
+
+</script>
+
+</body>
+</html>
