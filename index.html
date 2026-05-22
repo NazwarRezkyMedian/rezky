@@ -16,7 +16,7 @@ font-family:Segoe UI,sans-serif;
 
 body{
 overflow:hidden;
-height:100vh;
+min-height:100vh;
 background:linear-gradient(-45deg,#000428,#004e92,#4b0082,#00c6ff);
 background-size:400% 400%;
 animation:bg 12s ease infinite;
@@ -39,14 +39,17 @@ min-width:100%;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:40px;
+padding:20px;
+overflow-y:auto;
 }
 
 .card{
-width:85%;
+
+width:100%;
 max-width:1000px;
 
-padding:40px;
+padding:clamp(20px,5vw,40px);
+
 border-radius:25px;
 
 background:rgba(255,255,255,0.1);
@@ -76,16 +79,17 @@ transform:translateY(0);
 }
 
 h1{
-font-size:50px;
-margin-bottom:20px;
+font-size:clamp(28px,5vw,50px);
+margin-bottom:15px;
 }
 
 h2{
-margin-bottom:20px;
+font-size:clamp(18px,3vw,30px);
+margin-bottom:15px;
 }
 
 p,li{
-font-size:20px;
+font-size:clamp(14px,2vw,20px);
 line-height:1.8;
 }
 
@@ -106,7 +110,7 @@ font-weight:bold;
 }
 
 ul{
-margin-left:25px;
+margin-left:20px;
 }
 
 button{
@@ -114,14 +118,22 @@ button{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-padding:15px 20px;
-font-size:25px;
+
+width:clamp(40px,5vw,60px);
+height:clamp(40px,5vw,60px);
+
+font-size:clamp(18px,3vw,25px);
+
 border:none;
 border-radius:50%;
 cursor:pointer;
+
 background:rgba(255,255,255,.2);
 color:white;
+
 backdrop-filter:blur(10px);
+transition:.3s;
+z-index:100;
 }
 
 button:hover{
@@ -130,11 +142,11 @@ color:black;
 }
 
 .prev{
-left:20px;
+left:10px;
 }
 
 .next{
-right:20px;
+right:10px;
 }
 
 .dot-container{
@@ -152,11 +164,49 @@ height:12px;
 background:white;
 border-radius:50%;
 opacity:.5;
+transition:.3s;
 }
 
 .active{
 opacity:1;
 background:cyan;
+}
+
+/* HP kecil */
+
+@media(max-width:600px){
+
+.card{
+padding:20px;
+}
+
+button{
+top:auto;
+bottom:80px;
+}
+
+.prev{
+left:25%;
+}
+
+.next{
+right:25%;
+}
+
+ul{
+margin-left:15px;
+}
+
+}
+
+/* Layar besar */
+
+@media(min-width:1200px){
+
+.card{
+max-width:1100px;
+}
+
 }
 
 </style>
@@ -166,138 +216,97 @@ background:cyan;
 
 <div class="slider" id="slider">
 
-<!-- Slide 1 -->
-
 <div class="slide">
-
 <div class="card center">
-
-<h1 class="glow">
-HALLOO!! 👋
-</h1>
-
-<h2>
-Selamat Datang di Web Server
-</h2>
-
-<h1 class="highlight">
-Nazwar Rezky Median
-</h1>
-
-<p>
-Website Portofolio TKJ
-</p>
-
+<h1 class="glow">HALLOO!! 👋</h1>
+<h2>Selamat Datang di Web Server</h2>
+<h1 class="highlight">Nazwar Rezky Median</h1>
+<p>Website Portofolio TKJ</p>
 </div>
-
 </div>
-
-<!-- Slide 2 -->
 
 <div class="slide">
-
 <div class="card">
-
 <h1>👨 About Me</h1>
 
 <p>
-Saya <span class="highlight">Nazwar Rezky Median</span>, usia saya sekarang <span class="highlight">18 tahun</span>.
-Saya siswa <span class="highlight">SMKS Sandikta</span> yang berjurusan
-<span class="highlight">TKJ (Teknik Komputer Jaringan)</span>.
+Saya <span class="highlight">Nazwar Rezky Median</span>,
+usia saya sekarang
+<span class="highlight">18 tahun</span>.
+Saya siswa
+<span class="highlight">SMKS Sandikta</span>
+yang berjurusan
+<span class="highlight">
+TKJ (Teknik Komputer Jaringan)
+</span>.
 </p>
 
 <br>
 
-<p>
-Saya ingin menginformasikan pengalaman keahlian dasar saya:
-</p>
+<p>Pengalaman keahlian dasar:</p>
 
 <ul>
-
 <li>🌐 DNS Server</li>
-
 <li>🖥 Web Server</li>
-
 <li>🔒 SSH Server</li>
-
 <li>📡 Mikrotik</li>
-
 <li>⚙ Cisco</li>
-
 </ul>
 
 </div>
-
 </div>
 
-<!-- Slide 3 -->
-
 <div class="slide">
-
 <div class="card">
 
 <h1>📚 Penjelasan</h1>
 
 <p>
 <b>🌐 DNS Server</b><br>
-DNS Server adalah sistem yang mengubah nama domain menjadi alamat IP.<br>
-Gunanya: mempermudah pengguna mengakses website tanpa menghafal IP.
+Mengubah nama domain menjadi alamat IP.
 </p>
 
 <br>
 
 <p>
 <b>🖥 Web Server</b><br>
-Web Server adalah sistem yang menyimpan dan menampilkan website kepada pengguna.<br>
-Gunanya: menjalankan website agar dapat diakses melalui internet.
+Menyimpan dan menampilkan website.
 </p>
 
 <br>
 
 <p>
 <b>🔒 SSH Server</b><br>
-SSH Server adalah layanan untuk mengakses server secara aman dari jarak jauh.<br>
-Gunanya: mempermudah konfigurasi dan pengelolaan server.
+Akses server aman dari jarak jauh.
 </p>
 
 <br>
 
 <p>
 <b>📡 Mikrotik</b><br>
-Digunakan untuk mengatur jaringan, hotspot, firewall, dan bandwidth.
+Mengatur jaringan, hotspot, firewall, dan bandwidth.
 </p>
 
 <br>
 
 <p>
 <b>⚙ Cisco</b><br>
-Digunakan untuk membangun dan mengelola jaringan komputer.
+Membangun dan mengelola jaringan komputer.
 </p>
 
 </div>
-
 </div>
 
-<!-- Slide 4 -->
-
 <div class="slide">
-
 <div class="card center">
-
 <h1 class="glow">
 TERIMAKASIHHH!!! 🎉
 </h1>
-
 <h2>
 Terima kasih telah mengunjungi Web Server saya
 </h2>
-
-<p>
-See You Again 👋
-</p>
-
+<p>See You Again 👋</p>
 </div>
-
 </div>
 
 </div>
@@ -317,32 +326,29 @@ See You Again 👋
 let slide=0;
 const slider=document.getElementById("slider");
 const dots=document.querySelectorAll(".dot");
+const totalSlides=4;
 
 function showSlide(){
 
 slider.style.transform=
 `translateX(-${slide*100}%)`;
 
-dots.forEach(dot=>dot.classList.remove("active"));
+dots.forEach(dot=>
+dot.classList.remove("active")
+);
 
 dots[slide].classList.add("active");
 
 }
 
 function nextSlide(){
-
-slide=(slide+1)%4;
-
+slide=(slide+1)%totalSlides;
 showSlide();
-
 }
 
 function prevSlide(){
-
-slide=(slide-1+4)%4;
-
+slide=(slide-1+totalSlides)%totalSlides;
 showSlide();
-
 }
 
 setInterval(nextSlide,5000);
